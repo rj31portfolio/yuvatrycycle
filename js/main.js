@@ -12,29 +12,32 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-const end = new Date();
-end.setDate(end.getDate() + 3);
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
 const secsEl = document.getElementById("secs");
 
-function tick() {
-  const now = new Date();
-  const diff = end - now;
-  if (diff <= 0) return;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const mins = Math.floor((diff / (1000 * 60)) % 60);
-  const secs = Math.floor((diff / 1000) % 60);
-  daysEl.textContent = String(days).padStart(2, "0");
-  hoursEl.textContent = String(hours).padStart(2, "0");
-  minsEl.textContent = String(mins).padStart(2, "0");
-  secsEl.textContent = String(secs).padStart(2, "0");
-}
+if (daysEl && hoursEl && minsEl && secsEl) {
+  const end = new Date();
+  end.setDate(end.getDate() + 3);
 
-tick();
-setInterval(tick, 1000);
+  function tick() {
+    const now = new Date();
+    const diff = end - now;
+    if (diff <= 0) return;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    daysEl.textContent = String(days).padStart(2, "0");
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minsEl.textContent = String(mins).padStart(2, "0");
+    secsEl.textContent = String(secs).padStart(2, "0");
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -75,4 +78,14 @@ document.querySelectorAll("[data-close]").forEach((btn) => {
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
+});
+
+document.querySelectorAll(".faq-item").forEach((item) => {
+  const button = item.querySelector(".faq-question");
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    const isOpen = item.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
 });

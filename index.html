@@ -25,8 +25,20 @@
         </div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
-          <a href="categories.html">Categories</a>
-          <a href="products.html">Products</a>
+          <div class="nav-item dropdown">
+            <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              Products
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a href="categories.html#tricycles" role="menuitem">Baby Tricycles</a>
+              <a href="categories.html#walkers" role="menuitem">Baby Walkers</a>
+              <a href="categories.html#ride-ons" role="menuitem">Ride Ons</a>
+              <a href="categories.html#nursery" role="menuitem">Nursery</a>
+              <a href="categories.html#baby-gear" role="menuitem">Baby Gear</a>
+              <a href="categories.html#baby-horses" role="menuitem">Baby Horses</a>
+            </div>
+          </div>
+          <a href="faq.html">FAQ</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -37,8 +49,14 @@
       </div>
       <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
         <a href="products.html">Products</a>
+        <a class="mobile-sub" href="categories.html#tricycles">Baby Tricycles</a>
+        <a class="mobile-sub" href="categories.html#walkers">Baby Walkers</a>
+        <a class="mobile-sub" href="categories.html#ride-ons">Ride Ons</a>
+        <a class="mobile-sub" href="categories.html#nursery">Nursery</a>
+        <a class="mobile-sub" href="categories.html#baby-gear">Baby Gear</a>
+        <a class="mobile-sub" href="categories.html#baby-horses">Baby Horses</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -201,7 +219,11 @@
           <p class="lead">Our mission is simple: create comfortable, trusted products that families love. From adjustable handlebars to smooth wheels, every detail is crafted with care for your little explorer.</p><a class="cta-btn mt-2" href="about.html">Learn more</a>
         </div>
       </div>
-      <div class="col-md-5 order-1 order-md-2"><img class="img-fluid rounded-3" alt="Trycle Kids bike" src="assets/img/hero/trybike.png"></div>
+      <div class="col-md-5 order-1 order-md-2">
+        <video class="about-video img-fluid rounded-3" autoplay muted loop playsinline>
+          <source src="assets/video/video.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
@@ -267,12 +289,12 @@
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact</a>
           <a href="#">Shipping & Returns</a>
-          <a href="#">FAQs</a>
+          <a href="faq.html">FAQs</a>
         </div>
         <div>
           <h4>Contact</h4>
-          <div class="muted">Phone: +91- </div>
-          <div class="muted">Email: hello@tryclekids.com</div>
+          <div class="muted">Phone: +91-8287030366 </div>
+          <div class="muted">Email:  penguintoyz@gmail.com</div>
           <div class="muted">Hours: Mon-Sat, 9am - 7pm</div>
         </div>
       </div>
