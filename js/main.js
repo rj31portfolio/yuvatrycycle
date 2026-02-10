@@ -9,7 +9,6 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 const daysEl = document.getElementById("days");
@@ -34,11 +33,9 @@ if (daysEl && hoursEl && minsEl && secsEl) {
     minsEl.textContent = String(mins).padStart(2, "0");
     secsEl.textContent = String(secs).padStart(2, "0");
   }
-
   tick();
   setInterval(tick, 1000);
 }
-
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
